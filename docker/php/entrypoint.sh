@@ -12,7 +12,7 @@ mkdir -p \
   bootstrap/cache
 
 chown -R www-data:www-data storage bootstrap/cache
-chmod -R ug+rwX storage bootstrap/cache
+chmod -R a+rwX storage bootstrap/cache
 
 if [ "${APP_AUTO_MIGRATE:-true}" = "true" ] && [ -f artisan ]; then
   max_retries="${APP_MIGRATE_MAX_RETRIES:-60}"
