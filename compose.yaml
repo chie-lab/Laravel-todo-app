@@ -30,16 +30,16 @@ services:
     image: mysql:8.0
     container_name: laravel_db
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: todo_db
-      MYSQL_USER: todo_user
-      MYSQL_PASSWORD: todo_password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysql", "-h", "localhost", "-utodo_user", "-ptodo_password", "-e", "SELECT 1"]
+      test: ["CMD", "mysql", "-h", "localhost", "-u${MYSQL_USER}", "-p${MYSQL_PASSWORD}", "-e", "SELECT 1"]
       interval: 5s
       timeout: 5s
       retries: 20
@@ -54,8 +54,8 @@ services:
       - "8081:80"
     environment:
       PMA_HOST: db
-      PMA_USER: todo_user
-      PMA_PASSWORD: todo_password
+      PMA_USER: ${MYSQL_USER}
+      PMA_PASSWORD: ${MYSQL_PASSWORD}
     networks:
       - laravel_network
     depends_on:
