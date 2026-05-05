@@ -14,27 +14,10 @@ mkdir -p \
 chown -R www-data:www-data storage bootstrap/cache
 chmod -R a+rwX storage bootstrap/cache
 
-if [ "${APP_AUTO_MIGRATE:-true}" = "true" ] && [ -f artisan ]; then
-  max_retries="${APP_MIGRATE_MAX_RETRIES:-60}"
-  retry_interval="${APP_MIGRATE_RETRY_INTERVAL:-2}"
-  current=1
-
+if [ -f artisan ]; then
   echo "[entrypoint] Running database migrations..."
-  while [ "$current" -le "$max_retries" ]; do
-    if php artisan migrate --force; then
-      echo "[entrypoint] Migrations completed."
-      break
-    fi
-
-    echo "[entrypoint] Waiting for database... ($current/$max_retries)"
-    current=$((current + 1))
-    sleep "$retry_interval"
-  done
-
-  if [ "$current" -gt "$max_retries" ]; then
-    echo "[entrypoint] Migration failed after retries." >&2
-    exit 1
-  fi
+  php artisan migrate --force
+  echo "[entrypoint] Migrations completed."
 fi
 
 exec php-fpm
