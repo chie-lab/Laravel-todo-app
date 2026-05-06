@@ -9,6 +9,15 @@
         <link rel="stylesheet" href="{{ asset('css/todos.css') }}">
     </head>
     <body>
+        @auth
+            <header class="site-header">
+                <span class="site-header-user">{{ Auth::user()->name }}</span>
+                <form action="{{ route('logout') }}" method="POST" class="site-header-logout">
+                    @csrf
+                    <button type="submit" class="logout-button">ログアウト</button>
+                </form>
+            </header>
+        @endauth
         @yield('content')
         <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
         <script src="{{ asset('js/todos.js') }}"></script>

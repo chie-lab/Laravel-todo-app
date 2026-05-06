@@ -1,3 +1,106 @@
+/* ========== サイトヘッダー ========== */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 10px 24px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+}
+
+.site-header-user {
+    font-size: 14px;
+    color: var(--subtle);
+}
+
+.site-header-logout {
+    display: block;
+    margin: 0;
+}
+
+.logout-button {
+    background: transparent;
+    color: var(--subtle);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.logout-button:hover {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ========== 認証フォーム ========== */
+.auth-card {
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 14px;
+}
+
+.field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"] {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 12px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.15s;
+    width: 100%;
+}
+
+.field input:focus {
+    border-color: var(--primary);
+}
+
+.btn-block {
+    width: 100%;
+    height: 44px;
+    font-size: 15px;
+    border-radius: 10px;
+    margin-top: 4px;
+}
+
+.auth-link {
+    margin: 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--subtle);
+}
+
+.auth-link a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* ========== 既存スタイル ========== */
 :root {
     --bg: #f4f7fb;
     --panel: #ffffff;
