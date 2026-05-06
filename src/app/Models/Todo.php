@@ -10,6 +10,7 @@ class Todo extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'title',
         'is_completed',
         'order',
@@ -18,4 +19,9 @@ class Todo extends Model
     protected $casts = [
         'is_completed' => 'boolean',
     ];
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
