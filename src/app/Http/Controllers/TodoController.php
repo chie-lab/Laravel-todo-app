@@ -45,4 +45,13 @@ class TodoController extends Controller
             ->route('todos.index')
             ->with('status', 'Todoの状態を更新しました。');
     }
+
+    public function destroy(Todo $todo): RedirectResponse
+    {
+        $todo->delete();
+
+        return redirect()
+            ->route('todos.index')
+            ->with('status', 'Todoを削除しました。');
+    }
 }

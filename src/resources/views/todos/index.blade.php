@@ -60,6 +60,11 @@
                                 </form>
                                 <span class="dot {{ $todo->is_completed ? 'dot-completed' : '' }}"></span>
                                 <span class="todo-title {{ $todo->is_completed ? 'todo-title-completed' : '' }}">{{ $todo->title }}</span>
+                                <form class="todo-delete-form" action="{{ route('todos.destroy', $todo) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="delete-button">削除</button>
+                                </form>
                             </li>
                         @endforeach
                     </ul>
