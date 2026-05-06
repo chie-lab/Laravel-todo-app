@@ -1,4 +1,5 @@
-<li class="todo-item">
+<li class="todo-item" data-id="{{ $todo->id }}">
+    <span class="drag-handle" aria-hidden="true">⠿</span>
     <form class="todo-item-form" action="{{ route('todos.update-completion', $todo) }}" method="POST">
         @csrf
         @method('PATCH')

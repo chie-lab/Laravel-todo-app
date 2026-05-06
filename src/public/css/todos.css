@@ -194,6 +194,27 @@ li {
     padding: 10px 0 0;
 }
 
+/* ドラッグハンドル */
+.drag-handle {
+    cursor: grab;
+    color: var(--subtle);
+    font-size: 18px;
+    line-height: 1;
+    padding: 0 6px 0 0;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+/* ドラッグ中のゴーストアイテム（プレースホルダー） */
+.todo-item-ghost {
+    opacity: 0.4;
+    background: var(--focus-ring);
+}
+
 @media (max-width: 640px) {
     .container {
         margin: 24px auto;

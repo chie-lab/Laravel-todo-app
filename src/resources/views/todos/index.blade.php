@@ -15,7 +15,7 @@
             @if ($todos->isEmpty())
                 <p class="empty">Todoはまだありません。最初の1件を追加してみましょう。</p>
             @else
-                <ul>
+                <ul id="todo-list" data-reorder-url="{{ route('todos.reorder') }}">
                     @foreach ($todos as $todo)
                         @include('todos.partials.todo-item', ['todo' => $todo])
                     @endforeach
