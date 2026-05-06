@@ -1,0 +1,337 @@
+/* ========== サイトヘッダー ========== */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 10px 24px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+}
+
+.site-header-user {
+    font-size: 14px;
+    color: var(--subtle);
+}
+
+.site-header-logout {
+    display: block;
+    margin: 0;
+}
+
+.logout-button {
+    background: transparent;
+    color: var(--subtle);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.logout-button:hover {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ========== 認証フォーム ========== */
+.auth-card {
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 14px;
+}
+
+.field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"] {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 12px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.15s;
+    width: 100%;
+}
+
+.field input:focus {
+    border-color: var(--primary);
+}
+
+.btn-block {
+    width: 100%;
+    height: 44px;
+    font-size: 15px;
+    border-radius: 10px;
+    margin-top: 4px;
+}
+
+.auth-link {
+    margin: 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--subtle);
+}
+
+.auth-link a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* ========== 既存スタイル ========== */
+:root {
+    --bg: #f4f7fb;
+    --panel: #ffffff;
+    --primary: #0b5ed7;
+    --primary-hover: #0a58ca;
+    --text: #1f2937;
+    --subtle: #6b7280;
+    --border: #dbe3ee;
+    --danger: #b91c1c;
+    --success-bg: #ecfdf3;
+    --success-text: #166534;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family:
+        "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    background: linear-gradient(180deg, #eef4ff 0%, var(--bg) 100%);
+    color: var(--text);
+}
+
+.container {
+    max-width: 680px;
+    margin: 48px auto;
+    padding: 0 16px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(11, 94, 215, 0.06);
+}
+
+h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+}
+
+.subtitle {
+    margin: 0 0 20px;
+    color: var(--subtle);
+    font-size: 14px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 12px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary);
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 16px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+button:hover {
+    background: var(--primary-hover);
+}
+
+.alert {
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.alert-success {
+    background: var(--success-bg);
+    color: var(--success-text);
+    border: 1px solid #a7f3d0;
+}
+
+.alert-error {
+    background: #fef2f2;
+    color: var(--danger);
+    border: 1px solid #fecaca;
+}
+
+.alert-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+}
+
+.alert-list li {
+    display: block;
+    padding: 2px 0;
+    border: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--border);
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--border);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #93c5fd;
+    flex-shrink: 0;
+}
+
+.dot-completed {
+    background: #86efac;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.todo-item-form {
+    display: block;
+    gap: 0;
+    margin: 0;
+}
+
+.todo-item-form input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #16a34a;
+    cursor: pointer;
+}
+
+.todo-title {
+    transition: color 0.15s;
+}
+
+.todo-title-completed {
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.todo-delete-form {
+    margin: 0 0 0 auto;
+}
+
+.delete-button {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.delete-button:hover {
+    background: #fecaca;
+}
+
+.empty {
+    color: var(--subtle);
+    margin: 0;
+    padding: 10px 0 0;
+}
+
+/* ドラッグハンドル */
+.drag-handle {
+    cursor: grab;
+    color: var(--subtle);
+    font-size: 18px;
+    line-height: 1;
+    padding: 0 6px 0 0;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+/* ドラッグ中のゴーストアイテム（プレースホルダー） */
+.todo-item-ghost {
+    opacity: 0.4;
+    background: var(--focus-ring);
+}
+
+@media (max-width: 640px) {
+    .container {
+        margin: 24px auto;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    button {
+        height: 42px;
+    }
+}
