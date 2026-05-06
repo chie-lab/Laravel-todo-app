@@ -126,6 +126,36 @@ li {
     flex-shrink: 0;
 }
 
+.dot-completed {
+    background: #86efac;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.todo-item-form {
+    margin: 0;
+}
+
+.todo-item-form input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #16a34a;
+    cursor: pointer;
+}
+
+.todo-title {
+    transition: color 0.15s;
+}
+
+.todo-title-completed {
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
 .empty {
     color: var(--subtle);
     margin: 0;

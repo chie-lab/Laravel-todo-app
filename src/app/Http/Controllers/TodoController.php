@@ -32,4 +32,17 @@ class TodoController extends Controller
             ->route('todos.index')
             ->with('status', 'Todoを追加しました。');
     }
+
+    public function updateCompletion(Request $request, Todo $todo): RedirectResponse
+    {
+        $validated = $request->validate([
+            'is_completed' => ['required', 'boolean'],
+        ]);
+
+        $todo->update($validated);
+
+        return redirect()
+            ->route('todos.index')
+            ->with('status', 'Todoの状態を更新しました。');
+    }
 }
